@@ -7,8 +7,5 @@
     }else{
         echo "Usuario o contraseña incorrecto";
     }
-
-    // Alejo es gay
-    //Pero muy gay
-    // muy muy gay
+    
 ?>

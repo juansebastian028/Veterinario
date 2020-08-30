@@ -1,5 +1,4 @@
-<?php
-    //Alejo es gay      
+<?php    
     $servidorDB = "localhost";
     $nameDB="prueba2";
     $usernameDB = "root";
