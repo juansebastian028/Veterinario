@@ -1,44 +1,34 @@
 <?php
         //Importo al php externo
-        require_once("datos_conexion.php");
-        require_once("cifrado_password.php");
+        require("../model/usuario.php");
+        require("cifrado_password.php");
 
-        //Declaracion de variables del formulario
+        //Variables del formulario
         $name = $_POST["name"];
         $lastname = $_POST["lastname"];
         $gender = $_POST["gender"];
         $email = $_POST["email"];
         $password = $_POST["password"];
         $repPassword = $_POST["repPassword"];
-
+        $message = "";
        
         if($password === $repPassword){
                 
-                $conexion = mysqli_connect($servidorDB,$usernameDB,$passwordDB,$nameDB);
-
-                if(!$conexion){
-                        die("No se pudo conectar al servidor " . mysqli_connect);
-                }
-
-                echo "Conexión exitosa <br>";
+                $usuario = new Usuario();
 
                 //Ciframos la contraseña
                 $contraCifrada =  cifradoMurcielago($password);
                 
-                $consulta = "INSERT INTO usuario (`nombre`, `apellido`, `genero`, `correo`, `contrasena`) VALUES ('$name','$lastname','$gender','$email','$password')";
-
-                $resp = mysqli_query($conexion,$consulta);
+                $resp = $usuario->registrarUsuario($name,$lastname,$gender,$email,$contraCifrada);
 
                 if($resp){
-                    echo "Se inserto el usuario exitosamente";    
+                        $message = "Se inserto el usuario exitosamente";    
                 }else{
-                    echo "No se inserto el usuario exitosamente";        
+                        $message = "No se pudo insertar el usuario";        
                 }
 
-                mysqli_close($conexion);
-                
         }else{
-                echo "Las contraseñas no coinciden";
+                $message = "Las contraseñas no coinciden";
         }
 
 ?>

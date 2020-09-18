@@ -31,6 +31,10 @@ body{
 .radio-container label{
      margin: 0 .5rem;
 }
+
+.checkbox-container{
+    text-align: center;
+}
 .form-container input[type="submit"]{
     width: 50%;
     color: #fff;
@@ -41,5 +45,9 @@ body{
 .form-container legend{
     font-size: 2rem;
     font-weight: bold;
+    text-align: center;
+}
+
+.form-container p{
     text-align: center;
 }

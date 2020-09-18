@@ -1,3 +1,9 @@
+<?php 
+    if(isset($_POST["send-data"])){
+        
+        require("../controller/register.php");
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,7 +15,7 @@
 <body>
     <div class="container">
         
-            <form action="../controller/register.php" method="post" class="form-container">
+            <form action="<?= $_SERVER['PHP_SELF']; ?>" method="post" class="form-container">
                 <legend>Register</legend>
 
                 <label for="name">Nombre</label>
@@ -32,12 +38,16 @@
 
                 <label for="password">Contraseña</label>
                 <input type="password" name="password" placeholder="Tu contraseña" pattern="^(?!\d+$)[a-zA-Z\d\s]+$" 
-                title="Tu contraseña debe ser alfanúmerica" required>
+                title="Tu contraseña debe ser alfanúmerica" maxlength="20" minlength="7" required>
 
                 <label for="repPassword">Repetir Contraseña</label>
-                <input type="password" name="repPassword" placeholder="Repite tu contraseña" pattern="^(?!\d+$)[a-zA-Z\d\s]+$" title="Tu contraseña debe ser alfanúmerica" required>
+                <input type="password" name="repPassword" placeholder="Repite tu contraseña" pattern="^(?!\d+$)[a-zA-Z\d\s]+$" title="Tu contraseña debe ser alfanúmerica" maxlength="20" minlength="7" required>
 
                 <input type="submit" value="Registrarse" name="send-data">
+
+                <?php if(!empty($message)):?>
+                <p> <?= $message ?></p>
+                <?php endif ?>
             </form>
         
     </div>
