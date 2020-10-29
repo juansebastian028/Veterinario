@@ -1,0 +1,161 @@
+body{
+    background-color: #222;
+    font-family: sans-serif;
+}
+
+nav{
+    position: sticky;
+    top: 0;
+    background-color: #cfcfc6;
+
+}
+
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    padding: 0;
+    margin-top: 0;
+}
+
+.navbar__item{
+    list-style: none;
+}
+
+.navbar__text--bold{
+    font-weight: bold;
+    margin-left: 1rem;
+}
+
+.navbar__text--normal{
+    font-weight: normal;
+}
+
+.navbar__links-container{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.navbar__link{
+    display: block;
+    text-decoration: none;
+    padding: 1rem;
+    color:#222;
+}
+
+.navbar__link--secundary, .btn--primary{
+    background-color: #4c4cff;
+    color: #fff;
+}
+
+.container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.btn{
+    border: 0;
+    display: block;
+    padding: .5rem 1rem;
+}
+
+.btn--center{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.btn--right{
+    margin-left:auto;
+}
+
+.btn:hover{
+    cursor: pointer;
+}
+
+.btn--danger{
+    background-color: #cc0000;
+    color:#fff;
+}
+
+.btn-group{
+    display: flex;
+}
+
+.btn--30{
+    width: 30%;
+}
+
+.card{
+    max-width: 25%;
+    background-color: #cfcfc6;
+    margin: 1rem;
+    border-radius: .5rem;
+}
+
+.image-container{
+    height: 300px;
+    width: 100%;
+}
+.card__image{
+    border-radius: .5rem .5rem 0 0;
+    display: block;
+    width: inherit;
+    height: inherit;
+    object-fit: cover;
+    object-position: 50% 0%;
+}
+
+.card__title{
+    text-align: center;
+    padding-top: 1rem;
+    margin: 0;
+}
+.card__list{
+    list-style: none;
+    padding: .5rem .5rem;
+    margin: 0;
+}
+
+.modal{
+    box-shadow: 11px 8px 52px rgba(0, 0, 0, .35);
+    background-color: #fff;
+    width: 35%;
+    min-width: 400px;
+    position: fixed;
+    padding: 2rem 0;
+    left: 50%;
+    top:30%;
+    border-radius: .5rem;
+    transform: translate(-50%) scale(0);
+    transition: transform 0.2s;
+}
+
+.show-modal{
+    transform: translate(-50%) scale(1);
+}
+
+.form__legend{
+    display: block;
+    text-align: center;
+}
+
+.form__input{
+    display: block;
+    width: 80%;
+    padding: .5rem;
+    margin: .5rem auto;
+}
+
+@media only screen and (max-width: 992px) {
+
+    .card{
+        max-width: 50%;
+    }
+
+}
+
+@media only screen and (max-width: 600px) {
+    .card{
+        max-width: 100%;
+    }
+}

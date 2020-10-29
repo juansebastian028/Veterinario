@@ -1,6 +1,6 @@
 <?php
     //Importo php externo
-    require("../model/usuario.php");
+    require("../model/usuarioModel.php");
     require("cifrado_password.php");
 
     //Variables del formulario
@@ -14,5 +14,6 @@
 
     //Retorna 0 si no encontro el registro y 1 si lo encontro
     $numsFila = $usuario->validarUsuario($email,$contraCifrada);
+    Usuario::cerrarConexion();
     
 ?>

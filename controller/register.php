@@ -1,6 +1,6 @@
 <?php
         //Importo al php externo
-        require("../model/usuario.php");
+        require("../model/usuarioModel.php");
         require("cifrado_password.php");
 
         //Variables del formulario
@@ -20,6 +20,7 @@
                 $contraCifrada =  cifradoMurcielago($password);
                 
                 $resp = $usuario->registrarUsuario($name,$lastname,$gender,$email,$contraCifrada);
+                Usuario::cerrarConexion();
 
                 if($resp){
                         $message = "Se inserto el usuario exitosamente";    

@@ -2,10 +2,12 @@
     require("conexion.php");
 
     class Usuario extends Conexion{
+
+        private $conexion_db;
         
         public function __construct(){
-
-            parent::__construct();
+            
+            $this->conexion_db = Conexion::conectar();
         }
 
         public function registrarUsuario($name, $lastname, $gender, $email, $password){
@@ -34,5 +36,6 @@
             return $result->num_rows;
             
         }
+
     }
 ?>

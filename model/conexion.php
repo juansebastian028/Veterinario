@@ -4,22 +4,20 @@
 
     class Conexion{
 
-        protected $conexion_db;
+        public static function conectar(){
 
-        public function __construct(){
-            $this->conexion_db = new mysqli(DB_HOST,DB_USER,DB_PASS,DB_NAME);
+            $connection = new mysqli(DB_HOST,DB_USER,DB_PASS,DB_NAME);
 
-            if($this->conexion_db->connect_errno){
-                echo "Fallo al conectar a MySQL: " . $this->conexion_db->connect_error;
+            if($connection->connect_errno){
 
-                return;
+                die('Error ' . $connection->connect_error);
             }
+            return $connection;
+        }
 
-            $this->conexion_db->set_charset(DB_CHARSET);
+        public static function cerrarConexion(){
+            $conexion_db = Conexion::conectar();
+            $conexion_db->close();
         }
     }
-
-
-
-
 ?>

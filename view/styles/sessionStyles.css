@@ -1,11 +1,6 @@
-*{
-    box-sizing: border-box;
-    font-family: sans-serif;
-}
 body{
     background-color: #222;
-    padding: 0;
-    margin: 0;
+    font-family: sans-serif;
 }
 
 .container{
@@ -16,38 +11,35 @@ body{
     height: 100vh;
 }
 
-.form-container{
+.form{
     width: 400px;
     background-color: #fff;
     padding: 1rem 0;
 }
 
-.form-container > * {
+.form > * {
     display: block;
     width: 80%;
     padding: .5rem;
     margin: .25rem auto;
 }
-.radio-container label{
+.radio-container__label{
      margin: 0 .5rem;
 }
 
-.checkbox-container{
-    text-align: center;
-}
-.form-container input[type="submit"]{
+.form__submit{
     width: 50%;
     color: #fff;
     border: none;
     margin-top: 1rem;
     background-color: #4c4cff;
 }
-.form-container legend{
+.form__legend{
     font-size: 2rem;
     font-weight: bold;
     text-align: center;
 }
 
-.form-container p{
+.form__text{
     text-align: center;
 }
